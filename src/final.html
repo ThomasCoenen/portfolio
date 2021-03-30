@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Portfolio</title>
+	<style>
+
+		/*prevent the body from overflowing. This ensures that our parent grid container will retain full control of the entire browser viewport. There should be nothing outside of our parent*/
+
+		body {
+			margin: auto 0;
+ 			overflow: hidden;
+ 			display: grid;
+ 			width: 100%;
+ 			/*height: 100vh;
+		  	width: 100vw;*/
+ 			/*margin: 0px;*/
+		}
+
+		/*grid container will take up all the viewport*/
+		.container {    
+		  height: 100vh;
+		  width: 100vw;
+		  display: grid;
+  		  grid-template-columns: auto;
+		  grid-template-rows: auto auto auto auto auto auto;
+		 /* grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+		   grid-template-columns: 1fr;*/
+  		  /*overflow: hidden;*/
+  		  /*font-size: 20px;*/
+  		  /*width: 100%;*/
+		}
+
+		/*new stuff*/
+		.header-wrap {
+			display: grid;
+			grid-template-columns: auto;
+			/*grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));*/
+			grid-template-rows: auto auto;
+			overflow: hidden;
+			background-color: rgb(188, 245, 66);
+			align-items: center;
+			width: 100%;
+			height: 100%;
+		}
+
+		#myHeader {
+			display: grid;
+			/*grid-template-columns: auto auto;*/
+			/*grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));*/
+			grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+			grid-template-rows: auto;
+			/*grid-template-rows: repeat(auto-fit, minmax(200px, 1fr));*/
+			justify-items: center;
+			width: 100%;
+			background-color: rgb(52, 235, 158);
+		}
+
+		.list {
+			list-style: none;
+			justify-self: start;
+			/*align-self: end;*/
+		}
+
+		.buttons {
+			justify-self: end;
+			margin: 15px 20px 0px 0px;
+		}
+
+		#nav-header {
+			display: grid;
+			grid-template-columns: auto;
+			grid-template-rows: auto;
+			/*grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));*/
+			/*grid-template-rows: auto;*/
+			width: 100%;
+		}
+
+		#list-2 {
+			display: grid;
+			grid-template-columns: auto auto auto;
+			grid-template-rows: auto;
+			/*grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+			grid-template-rows: auto;*/
+			justify-items: center;
+			list-style: none;
+			font-size: 20px;
+			width: 100%;
+			/*margin: 0px 0px 0px 0px;*/
+			padding: 0px 20px 0px 0px;
+		}
+
+
+		.content {
+			/*height: 100vh;
+		    width: 100vw;*/
+			display: grid;
+			grid-template-columns: auto;
+ 			overflow: hidden; /*hide any overflow to ensure that nothing leaks outside of the .content element that would disturb the parent’s layout.*/
+ 			overflow-y: scroll;
+ 			width: 100vw;
+ 			background-color: Lightgrey;
+			font-size: 25px;
+ 			/*margin: 0px;*/
+ 			/*margin: auto 0;*/
+ 			/*padding: 0px -10px 0px 0px;*/
+ 			/*padding: 0px 0px 0px 0px;
+			margin: 0px 0px 0px 0px;*/
+			/*float: left;*/
+			/*width: 50%;*/
+		}
+
+		#welcome {
+			display: grid;
+			grid-template-columns: auto;
+			/*grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));*/
+			grid-template-rows: auto auto;
+			justify-items: center;
+			width: 100%;
+		}
+
+		#projects {
+			display: grid;
+			grid-template-columns: auto;
+			/*grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));*/
+			grid-template-rows: auto;
+			justify-items: center;
+			background-color: red;
+			width: 100%;
+		}
+
+		#project-heading {
+			font-size: 35px;
+			text-align: center;
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(400px, auto));
+			/*grid-template-columns: auto auto;*/
+			grid-template-rows: auto auto;
+			width: 80%;
+		}
+
+		.project-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+			/*grid-template-columns: auto;*/
+			grid-template-rows: 1fr;
+			grid-gap: 20px;
+			width: 80%;
+			background-color: rgb(203, 245, 66);
+		}
+
+		.specific-project {
+			display: grid;
+			/*grid-template-columns: auto;
+			grid-template-rows: auto;*/
+			justify-items: center;
+			/*align-items: center;
+			align-self: center;*/
+			border-style: solid;
+			border-spacing: 50px;
+			font-size: 25px;
+			margin: 0px 0px 0px 0px;
+			padding: 20px 0px 0px 0px;
+			background-color: rgb(245, 176, 66);
+			/*width: 100%;*/
+		}
+
+		.specific-project:hover {
+			-webkit-box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+		    -moz-box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+		    -o-box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+		    box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+		}
+
+		#contact {
+			/*text-align: center;*/
+			display: grid;
+			grid-template-columns: auto;
+			/*grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));*/
+			/*grid-template-rows: auto auto auto;*/
+			grid-template-rows: auto;
+			justify-items: center;
+			/*align-items: center;*/
+			/*align-self: center;*/
+			width: 100%;
+		}
+
+		#convo {
+			display: grid;
+			text-align: center;
+			grid-template-columns: auto;
+			grid-template-rows: auto auto;
+			justify-items: center;
+			justify-self: center;
+			margin: -5px 0px 0px 0px;
+/*			padding: 20px 0px 0px 0px;*/
+		}
+
+		#convo h5 {
+			margin: -10px 0px 20px 0px;
+		}
+
+		#connect-links {
+			display: grid;
+			grid-template-columns: auto auto auto;
+			/*grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));*/
+			grid-template-rows: auto;
+			justify-items: center;
+			/*grid-gap: 170px;*/
+			list-style: none;
+			width: 100%;
+			/*margin: 0px 0px 0px 0px;
+			padding: 20px 0px 0px 0px;*/
+		}
+
+
+		#connect-links li:hover {
+			transform: scale(1.15); 
+		}
+
+		footer {
+			display: grid;
+			justify-self: center;
+		}
+
+
+	</style>
+</head>
+
+<body>
+	<div class="container">
+
+		<div class="header-wrap">
+			<header class="header" id="myHeader">
+				<ul class="list">
+					<li>FCC: Survey Form</li> 
+					<li>mywebsite.com</li> 
+				</ul>
+
+				<div class="buttons">
+					<button>Heart</button>
+					<button>Sign Up</button>
+					<button>Log In</button>
+				</div>
+			</header>
+
+			<nav id=nav-header>
+				<ul id="list-2">
+					<li class="nav-list"><a href="">About</a></li>
+					<li class="nav-list"><a href="">Work</a></li>
+					<li class="nav-list"><a href="">Contact</a></li>
+				</ul>
+			</nav>
+		</div>
+
+    	<div class="content">
+
+			<section id="welcome">
+				<h2>Hey I am Thomas</h2>
+				<p>a web developer</p>
+			</section>
+
+			<section id="projects">
+
+				<div id="project-heading">
+					<h2>These are some of my projects</h2>
+				</div>
+
+				<div class="project-grid">
+					<a class="specific-project" href="">
+						<img src="https://www.mathworks.com/help/examples/graphics/win64/CompareTypesOfBarGraphsExample_01.png" height="300" width="300">
+						<p>Tribute Page</p>
+					</a>
+
+					<a class="specific-project" href="">
+						<img src="https://www.mathworks.com/help/examples/graphics/win64/CompareTypesOfBarGraphsExample_01.png" height="300" width="300">
+						<p>Tribute Page</p>
+					</a>
+
+					<a class="specific-project" href="">
+						<img src="https://www.mathworks.com/help/examples/graphics/win64/CompareTypesOfBarGraphsExample_01.png" height="300" width="300">
+						<p>Tribute Page</p>
+					</a>
+
+					<a class="specific-project" href="">
+						<img src="https://www.mathworks.com/help/examples/graphics/win64/CompareTypesOfBarGraphsExample_01.png" height="300" width="300">
+						<p>Tribute Page</p>
+					</a>
+
+					<a class="specific-project" href="">
+						<img src="https://www.mathworks.com/help/examples/graphics/win64/CompareTypesOfBarGraphsExample_01.png" height="300" width="300">
+						<p>Tribute Page</p>
+					</a>
+
+					<a class="specific-project" href="">
+						<img src="https://www.mathworks.com/help/examples/graphics/win64/CompareTypesOfBarGraphsExample_01.png" height="300" width="300">
+						<p>Tribute Page</p>
+					</a>
+
+					<a class="specific-project" href="">
+						<img src="https://www.mathworks.com/help/examples/graphics/win64/CompareTypesOfBarGraphsExample_01.png" height="300" width="300">
+						<p>Tribute Page</p>
+					</a>
+
+					<a class="specific-project" href="">
+						<img src="https://www.mathworks.com/help/examples/graphics/win64/CompareTypesOfBarGraphsExample_01.png" height="300" width="300">
+						<p>Tribute Page</p>
+					</a>
+
+					<a href="" class="btn btn-show-all" target="_blank">
+					
+					Show all</a>
+				</div>
+			</section>
+
+			<section id="contact">
+				<div id="convo">
+					<h1>Let's work together</h1>
+					<h5>How do you take your coffee?</h5>
+				</div>
+
+				<ul id="connect-links">
+					<li><a href="">GitHub</a>
+					</li>
+
+					<li><a href="">LinkedIn</a></li>
+					<li><a href="">Email Me</a></li>
+				</ul>
+
+			</section>
+
+			<footer>
+				<h3>Cool Quote</h3>
+			</footer>
+
+    	</div>
+	</div>
+	<script type="text/javascript" src="bundle.js">   
+	</script>  
+</body>
+</html>
+
+
