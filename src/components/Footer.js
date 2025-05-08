@@ -45,7 +45,9 @@ export default function Footer() {
                 <li><a href="https://github.com/ThomasCoenen" target="_blank" rel="noopener noreferrer">GitHub</a></li>
                 <li><a href="https://www.linkedin.com/in/thomas-coenen-55773b90/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
                 <li><Link to="/contact">Email Me</Link></li>
-                <li><Link to="/blog">Blog</Link></li>
+                {/* <li><Link to="/blog">Blog</Link></li> */}
+                <li><Link to="/about">About</Link></li>
+
             </ul>
 
             <footer className="bottomquote">

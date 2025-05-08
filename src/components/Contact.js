@@ -59,9 +59,16 @@ export default function Contact() {
         // <div class="formbox">
         <>
             <h1 style={{textAlign: "center", }}>Lets Connect!</h1>
-            <h5 style={{textAlign: "center", fontSize:"15.8px", marginRight:"10px", marginLeft:"10px"}}>You can also reach me directly here as well: <span>thomas.coenen58@gmail.com</span>
+            <h5 style={{textAlign: "center", fontSize:"15.8px", marginRight:"10px", marginLeft:"10px"}}>
+                Please email me here. I would love to connect!
             </h5>
-            <form className="form" onSubmit={handleSubmit}>
+            <h5 style={{textAlign: "center", fontSize:"15.8px", marginRight:"10px", marginLeft:"10px"}}>
+                thomas.coenen58@gmail.com
+            </h5>
+            
+
+
+            {/* <form className="form" onSubmit={handleSubmit}>
                 <div className="singlebox">
                     <label htmlFor="name"></label>
                     <input 
@@ -102,7 +109,10 @@ export default function Contact() {
                     />
                 </div>
                 <button className="submitcontactbutton" type="submit">{status}</button>
-            </form>
+            </form> */}
+
+
+            
         </>
     );
 };
